@@ -71,3 +71,52 @@ export function beep(good = true) {
 export function el(sel) {
   return document.querySelector(sel);
 }
+
+function generatedShape(g, name, complexity = 'medium') {
+  const rnd = seededRand(nameHash(name));
+  const cx = 500, cy = 350;
+  
+  // Diferentes complejidades según el "tamaño" del país
+  let n, rBase, variation;
+  
+  switch(complexity) {
+    case 'high': // Países grandes
+      n = 14 + Math.floor(rnd() * 8);
+      rBase = 200;
+      variation = 0.6;
+      break;
+    case 'low': // Países pequeños/islas
+      n = 8 + Math.floor(rnd() * 4);
+      rBase = 100;
+      variation = 0.3;
+      break;
+    default: // Países medianos
+      n = 10 + Math.floor(rnd() * 6);
+      rBase = 160;
+      variation = 0.5;
+  }
+  
+  let d = '';
+  for(let i = 0; i < n; i++) {
+    const ang = (i/n) * Math.PI * 2 + rnd() * 0.2;
+    const r = rBase * (0.7 + rnd() * variation);
+    const x = cx + Math.cos(ang) * r;
+    const y = cy + Math.sin(ang) * r * (0.75 + rnd() * 0.3);
+    d += (i ? ' L ' : 'M ') + x.toFixed(1) + ' ' + y.toFixed(1);
+  }
+  d += ' Z';
+  
+  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d', d);
+  p.setAttribute('fill','#2b69ff22');
+  p.setAttribute('stroke','#8fdcff');
+  p.setAttribute('stroke-width','4');
+  p.setAttribute('vector-effect','non-scaling-stroke');
+  p.setAttribute('stroke-linejoin','round');
+  g.appendChild(p);
+  
+  // Añadir un punto para la capital en formas generadas
+  const capitalX = cx + (rnd() * 80 - 40);
+  const capitalY = cy + (rnd() * 60 - 30);
+  dot(g, capitalX, capitalY, 4);
+}

@@ -29,23 +29,42 @@ export class UI {
     };
   }
 
-  renderFigure(item, studyMode = false) {
-    this.elements.silhouette.innerHTML = '';
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    this.elements.silhouette.appendChild(g);
+renderFigure(item, studyMode = false) {
+  this.elements.silhouette.innerHTML = '';
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  this.elements.silhouette.appendChild(g);
+  
+  // Añadir fondo sutil
+  const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  bg.setAttribute('width', '1000');
+  bg.setAttribute('height', '700');
+  bg.setAttribute('fill', 'transparent');
+  this.elements.silhouette.appendChild(bg);
+  
+  item.svg(g);
+  
+  if (studyMode) {
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', '20');
+    t.setAttribute('y', '40');
+    t.setAttribute('fill', '#bfe2ff');
+    t.setAttribute('font-size', '24');
+    t.setAttribute('font-weight', 'bold');
+    t.textContent = (item.type === 'relief' ? 'Relieve: ' : 'País: ') + item.label + (item.flag ? ' ' + item.flag : '');
+    this.elements.silhouette.appendChild(t);
     
-    item.svg(g);
-    
-    if (studyMode) {
-      const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      t.setAttribute('x', '20');
-      t.setAttribute('y', '40');
-      t.setAttribute('fill', '#bfe2ff');
-      t.setAttribute('font-size', '24');
-      t.textContent = (item.type === 'relief' ? 'Relieve: ' : 'País: ') + item.label + (item.flag ? ' ' + item.flag : '');
-      this.elements.silhouette.appendChild(t);
+    // Añadir información adicional en modo estudio
+    if (item.type !== 'relief') {
+      const info = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      info.setAttribute('x', '20');
+      info.setAttribute('y', '70');
+      info.setAttribute('fill', '#9fb0d8');
+      info.setAttribute('font-size', '16');
+      info.textContent = `Continente: ${item.continent}`;
+      this.elements.silhouette.appendChild(info);
     }
   }
+}
 
   renderChoices(options, onChoiceClick) {
     this.elements.choices.innerHTML = '';
