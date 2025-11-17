@@ -44,126 +44,73 @@ function generatedShape(g, name) {
 
 // Siluetas manuales para países clave
 function mx(g) { 
-  // México - forma más reconocible
-  path(g, "M 200 300 L 250 280 L 300 270 L 350 250 L 400 260 L 450 280 L 500 290 L 520 320 L 480 350 L 430 360 L 380 340 L 330 330 L 280 320 L 230 310 Z");
-  // Baja California
-  path(g, "M 180 200 L 220 180 L 250 190 L 230 230 L 190 240 Z");
-  dot(g, 350, 290, 8); // CDMX
+  path(g, "M 120 330 L 220 260 L 300 250 L 350 210 L 420 220 L 470 260 L 520 260 L 555 280 L 590 330 L 560 360 L 520 355 L 500 370 L 470 380 L 410 360 L 360 350 L 320 340 L 300 360 L 260 370 L 200 360 L 160 345 Z"); 
+  dot(g, 540, 290, 8); 
 }
 
 function br(g) { 
-  // Brasil - forma triangular característica
-  path(g, "M 600 250 L 700 220 L 750 280 L 720 380 L 650 400 L 580 350 L 550 300 Z");
-  dot(g, 650, 320, 7); // Brasilia
+  path(g, "M 640 220 L 700 210 L 740 240 L 760 300 L 720 340 L 690 360 L 650 360 L 610 330 L 590 290 L 610 250 Z"); 
 }
 
 function ar(g) { 
-  // Argentina - forma alargada
-  path(g, "M 550 350 L 600 320 L 650 300 L 700 280 L 720 320 L 700 500 L 650 520 L 600 500 L 580 450 L 560 400 Z");
-  dot(g, 620, 380, 6); // Buenos Aires
+  path(g, "M 760 360 L 750 420 L 740 480 L 730 520 L 720 560 L 710 620 L 690 640 L 680 610 L 690 560 L 700 520 L 710 470 L 720 420 L 730 380 Z"); 
 }
 
 function us(g) { 
-  // Estados Unidos - forma rectangular mejorada
-  path(g, "M 200 200 L 350 180 L 500 190 L 480 350 L 330 340 L 180 320 Z");
-  // Alaska
-  path(g, "M 100 100 L 150 80 L 180 120 L 160 160 L 110 150 Z");
-  // Hawaii
-  path(g, "M 550 320 L 580 300 L 600 330 L 570 350 Z");
-  dot(g, 320, 280, 6); // Washington DC
+  path(g, "M 180 220 L 260 200 L 360 190 L 460 200 L 560 210 L 600 230 L 560 260 L 520 260 L 470 260 L 420 240 L 360 240 L 300 240 L 240 250 L 200 240 Z"); 
 }
 
 function ca(g) { 
-  // Canadá - forma con bahías
-  path(g, "M 180 150 L 300 130 L 450 140 L 500 160 L 480 200 L 520 220 L 500 280 L 450 300 L 350 290 L 250 270 L 200 240 L 160 200 Z");
-  // Terranova
-  path(g, "M 520 180 L 550 160 L 580 190 L 550 210 Z");
-  dot(g, 300, 220, 6); // Ottawa
+  path(g, "M 160 160 L 260 140 L 360 140 L 460 150 L 540 160 L 560 140 L 600 150 L 620 170 L 560 180 L 520 170 L 460 170 L 400 170 L 340 160 L 260 160 L 200 170 Z"); 
 }
 
-
 function it(g) { 
-  // Italia - forma de bota reconocible
-  path(g, "M 650 250 L 620 280 L 600 320 L 610 380 L 640 400 L 680 380 L 700 340 L 720 300 L 700 270 L 680 260 Z");
-  // Sicilia
-  path(g, "M 640 420 L 660 410 L 670 440 L 650 450 Z");
-  dot(g, 650, 320, 5); // Roma
+  path(g, "M 660 230 L 640 250 L 620 260 L 640 280 L 660 300 L 680 310 L 700 300 L 710 290 L 700 280 L 680 270 L 690 260 L 700 250 L 690 240 Z"); 
+  dot(g, 715, 305, 6); 
 }
 
 function jp(g) { 
-  // Japón - archipiélago
-  path(g, "M 820 220 L 850 200 L 880 230 L 860 260 Z"); // Honshu
-  path(g, "M 800 250 L 820 240 L 830 270 L 810 280 Z"); // Kyushu
-  path(g, "M 840 180 L 860 170 L 870 200 L 850 210 Z"); // Hokkaido
-  path(g, "M 890 240 L 910 230 L 920 250 L 900 260 Z"); // Shikoku
-  dot(g, 840, 240, 4); // Tokio
+  dot(g, 860, 260, 6); 
+  dot(g, 850, 280, 7); 
+  dot(g, 845, 300, 6); 
+  dot(g, 855, 320, 5); 
 }
 
 function au(g) { 
-  // Australia - forma reconocible
-  path(g, "M 750 400 L 820 380 L 860 420 L 840 480 L 780 500 L 720 470 L 700 430 Z");
-  // Tasmania
-  path(g, "M 760 520 L 780 510 L 790 530 L 770 540 Z");
-  dot(g, 780, 450, 5); // Canberra
+  path(g, "M 860 420 L 900 430 L 930 460 L 910 500 L 870 520 L 830 500 L 820 460 Z"); 
+  dot(g, 940, 500, 4); 
 }
+
 function fr(g) { 
-  // Francia - forma hexagonal
-  path(g, "M 450 200 L 500 180 L 550 190 L 580 220 L 570 260 L 530 280 L 480 270 L 440 250 Z");
-  // Córcega
-  path(g, "M 580 240 L 600 230 L 610 260 L 590 270 Z");
-  dot(g, 500, 230, 5); // París
+  path(g, "M 400 200 L 450 180 L 500 190 L 550 210 L 600 200 L 650 220 L 680 250 L 650 280 L 600 270 L 550 260 L 500 250 L 450 240 L 400 230 Z"); 
 }
 
 function de(g) { 
-  // Alemania - forma rectangular
-  path(g, "M 480 180 L 530 170 L 580 190 L 590 230 L 550 250 L 500 240 L 470 220 Z");
-  dot(g, 520, 210, 5); // Berlín
+  path(g, "M 420 180 L 480 170 L 540 175 L 600 185 L 640 200 L 620 230 L 580 240 L 520 235 L 460 225 L 420 210 Z"); 
 }
 
 function es(g) { 
-  // España - forma rectangular con Portugal
-  path(g, "M 400 250 L 450 230 L 500 240 L 480 320 L 430 330 L 380 300 Z");
-  dot(g, 440, 280, 5); // Madrid
+  path(g, "M 350 280 L 400 260 L 450 270 L 500 290 L 480 320 L 430 330 L 380 310 Z"); 
 }
 
 function uk(g) { 
-  // Reino Unido - forma de isla con Escocia e Inglaterra
-  path(g, "M 420 150 L 460 140 L 500 150 L 480 200 L 440 210 L 400 190 Z");
-  dot(g, 450, 170, 4); // Londres
+  path(g, "M 380 150 L 420 140 L 460 145 L 500 155 L 480 185 L 440 190 L 400 180 Z"); 
 }
 
 function cn(g) { 
-  // China - forma grande y reconocible
-  path(g, "M 700 180 L 780 160 L 820 190 L 800 280 L 750 300 L 700 270 L 680 220 Z");
-  // Taiwán
-  path(g, "M 750 250 L 770 240 L 780 260 L 760 270 Z");
-  dot(g, 740, 230, 6); // Beijing
+  path(g, "M 720 180 L 780 170 L 840 190 L 820 230 L 760 240 L 700 220 Z"); 
 }
 
 function in_(g) { 
-  // India - forma triangular
-  path(g, "M 720 250 L 780 230 L 800 280 L 760 320 L 700 300 L 680 270 Z");
-  dot(g, 740, 280, 5); // Nueva Delhi
-}
-
-
-function eg(g) { 
-  // Egipto - forma rectangular
-  path(g, "M 550 220 L 600 200 L 640 230 L 620 280 L 570 300 L 530 270 Z");
-  dot(g, 580, 250, 5); // El Cairo
+  path(g, "M 750 250 L 800 240 L 850 260 L 820 300 L 770 310 L 720 280 Z"); 
 }
 
 function za(g) { 
-  // Sudáfrica - forma triangular
-  path(g, "M 520 450 L 570 430 L 590 470 L 550 490 L 500 480 Z");
-  dot(g, 540, 470, 4); // Pretoria
+  path(g, "M 500 500 L 550 480 L 600 490 L 580 520 L 530 530 L 480 510 Z"); 
 }
-function ru(g) { 
-  // Rusia - forma enorme
-  path(g, "M 300 100 L 500 80 L 600 120 L 580 200 L 550 250 L 500 280 L 400 260 L 300 220 L 250 180 L 220 140 Z");
-  // Kaliningrado
-  path(g, "M 450 180 L 470 170 L 480 190 L 460 200 Z");
-  dot(g, 400, 180, 6); // Moscú
+
+function eg(g) { 
+  path(g, "M 520 220 L 580 210 L 640 230 L 620 260 L 560 270 L 500 250 Z"); 
 }
 
 // Función helper para crear países
@@ -258,13 +205,8 @@ export const COUNTRIES = [
   // Medio Oriente & Cáucaso
   C('tr', 'Turquía', 'Europa/Asia'), 
   C('cy', 'Chipre', 'Europa/Asia'), 
-  C('ru', 'Rusia', 'Europa/Asia', ru), 
-  C('kz', 'Kazajistán', 'Europa/Asia'), 
-  C('kg', 'Kirguistán', 'Europa/Asia'), 
-  C('tj', 'Tayikistán', 'Europa/Asia'), 
-  C('tm', 'Turkmenistán', 'Europa/Asia'), 
-  C('am', 'Armenia', 'Europa/Asia'), 
   C('ge', 'Georgia', 'Asia'), 
+  C('am', 'Armenia', 'Asia'), 
   C('az', 'Azerbaiyán', 'Asia'),
   C('sa', 'Arabia Saudita', 'Asia'), 
   C('ae', 'Emiratos Árabes Unidos', 'Asia'), 
@@ -381,39 +323,7 @@ export const COUNTRIES = [
   C('sc', 'Seychelles', 'África'), 
   C('km', 'Comoras', 'África')
 ];
-// Clasificar países por tamaño para mejor generación
-function getCountryComplexity(countryName) {
-  const largeCountries = [
-    'Rusia', 'Canadá', 'Estados Unidos', 'China', 'Brasil', 'Australia', 
-    'India', 'Argentina', 'Kazajistán', 'Argelia', 'México', 'Indonesia'
-  ];
-  
-  const smallCountries = [
-    'Singapur', 'Mónaco', 'Ciudad del Vaticano', 'San Marino', 'Liechtenstein',
-    'Malta', 'Andorra', 'Luxemburgo', 'Chipre', 'Baréin', 'Maldivas', 'Palaos'
-  ];
-  
-  if (largeCountries.includes(countryName)) return 'high';
-  if (smallCountries.includes(countryName)) return 'low';
-  return 'medium';
-}
 
-// Modifica la función C para usar complejidad
-function C(code, label, continent, customSvg) {
-  const complexity = getCountryComplexity(label);
-  
-  return {
-    id: code,
-    label,
-    continent,
-    code,
-    flag: flagEmojiFromCode(code),
-    img: flagImgUrl(code),
-    svg: customSvg ? 
-      (g) => customSvg(g) : 
-      (g) => generatedShape(g, label, complexity)
-  };
-}
 // Relieves
 function mountainRange(g, count, centerX, centerY) {
   for (let i = 0; i < count; i++) {
